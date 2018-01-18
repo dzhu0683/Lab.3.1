@@ -1,6 +1,5 @@
-
-
-public class ArrayMethod1 {
+public class ArrayMethod1 
+{
 
 	public static void main(String[] args) 
 	{
