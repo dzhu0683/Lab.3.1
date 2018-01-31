@@ -72,7 +72,17 @@ public class ArrayMethod1
 	
 	public static void bubbleSort(String[] list1)
 	{
-		
+		String Temp = 
+		int swap = 0;
+		while(swap > 0)
+		{
+			for(int i = 0; i < list1.length; i++)
+			{
+				for(int j = 1; j < list1.length -1; j++)
+				{
+					list1[i].compareTo(list1[j]);
+				}
+			}
+		}
 	}
-
 }
