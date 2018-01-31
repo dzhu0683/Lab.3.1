@@ -64,7 +64,7 @@ public class ArrayMethod1
 				}
 			}
 			//now we swap the two values
-			double temp = list1[min];//create temporay variable to store min
+			double temp = list1[min];//create temporary variable to store min
 			list1[min] = list1[i];//replace the second value with the first value
 			list1[i] = temp;//place the min in the first index
 		}
@@ -72,15 +72,20 @@ public class ArrayMethod1
 	
 	public static void bubbleSort(String[] list1)
 	{
-		String Temp = 
-		int swap = 0;
-		while(swap > 0)
+		String temp;// temporary variable to store strings
+		boolean swap = true;// boolen to determin if sort is finished
+		while(swap)
 		{
-			for(int i = 0; i < list1.length; i++)
+			swap = false;
+			for(int i = 0; i < list1.length - 1; i++)//for loop that loops through array
 			{
-				for(int j = 1; j < list1.length -1; j++)
+				int j = i + 1; //set j as the index after i
+				if(list1[i].compareTo(list1[j])>0)//use compareto method to determine alphabetical order
 				{
-					list1[i].compareTo(list1[j]);
+					temp = list1[i];//assign the temp string with string at index i
+					list1[i] = list1[j];//replace string at index i with index j
+					list1[j] = temp;//replace string at index j with the temp string
+					swap = true;
 				}
 			}
 		}
