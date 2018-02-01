@@ -3,6 +3,7 @@ Author: Darren Zhu
 2/1/18
 Lab 3.1
 References: https://www.geeksforgeeks.org/selection-sort/
+http://www.sanfoundry.com/java-program-implement-insertion-sort/
 */
 import java.util.Arrays;
 
@@ -44,16 +45,16 @@ public class ArrayMethod1
 	
 	public static void insertionSort(int[] list1)//start from beginning and insert each value in correct position one by one
 	{
-		for(int i = 1; i < list1.length; i++)// for loop that starts at second num in array
+		for(int i = 1; i < list1.length; i++)// for loop that starts at index 1 in array
 		{
-			int j = i - 1;// a second index that starts before i
-			
-			while(j >= 0 && list1[j] > list1[i])//as long as the value at index j in greater than value at index i
+			int j = i;// set j equal to i
+			int temp = list1[i];// temporary store the value at index i in variable temp
+			while(j > 0 && temp < list1[j-1])// run following as long as j > 0 and the value of temp is less than value at index j-1
 			{
-				list1[j+1] = list1[j];//replace value after index j with value at index j
-				j = j - 1;//j - 1 so you can continue to check all values in the front of i until j reachs 0
+				list1[j] = list1[j-1];// swap by setting value at index j to value at the index before it
+				j = j - 1;// we use this in order to cycle through all values that comes before index i to make sure you have check all of them
 			}
-			list1[j+1] = list1[i]; //replace value after index j with value at index i
+			list1[j] = temp;// replace value at index j with store value in temp integer
 		}
 	}
 	
@@ -64,7 +65,7 @@ public class ArrayMethod1
 			int min = i;//set the 1st value as min
 			for(int j = i+1; j < list1.length; j++)//for loop to pick out the num that comes after
 			{
-				if(list1[j] < list1[min])//if the second number is less than first
+				if(list1[j] < list1[min])//check if the second number is less than first
 				{
 					min = j;//if it is set that second number as the new min
 				}
@@ -87,11 +88,15 @@ public class ArrayMethod1
 			{
 				int j = i + 1; //set j as the index after i
 				if(list1[i].compareTo(list1[j])>0)//use compareto method to determine alphabetical order
+					//compareto compares two strings lexicographically
+					//result is < 0 if it is in alphabetical order
+					//result is 0 if they are the same letter
+					//result is > 0 if they are not sorted in alphabetical order
 				{
 					temp = list1[i];//assign the temp string with string at index i
 					list1[i] = list1[j];//replace string at index i with index j
 					list1[j] = temp;//replace string at index j with the temp string
-					swap = true;
+					swap = true;//setting swap to true will exit while loop and finishing the sort
 				}
 			}
 		}
