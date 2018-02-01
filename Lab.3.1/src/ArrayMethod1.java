@@ -1,3 +1,9 @@
+/*
+Author: Darren Zhu
+2/1/18
+Lab 3.1
+References: https://www.geeksforgeeks.org/selection-sort/
+*/
 import java.util.Arrays;
 
 public class ArrayMethod1 
@@ -36,11 +42,11 @@ public class ArrayMethod1
 
 	}
 	
-	public static void insertionSort(int[] list1)
+	public static void insertionSort(int[] list1)//start from beginning and insert each value in correct position one by one
 	{
 		for(int i = 1; i < list1.length; i++)// for loop that starts at second num in array
 		{
-			int j = i - 1;
+			int j = i - 1;// a second index that starts before i
 			
 			while(j >= 0 && list1[j] > list1[i])//as long as the value at index j in greater than value at index i
 			{
@@ -51,7 +57,7 @@ public class ArrayMethod1
 		}
 	}
 	
-	public static void selectionSort(double[] list1)
+	public static void selectionSort(double[] list1)//find min to place in front
 	{
 		for(int i = 0; i < list1.length -1; i++)// for loop to pick out the first number to compare
 		{
@@ -70,10 +76,10 @@ public class ArrayMethod1
 		}
 	}
 	
-	public static void bubbleSort(String[] list1)
+	public static void bubbleSort(String[] list1)// swap first two then next two, ect. Repeat until it is all sorted
 	{
 		String temp;// temporary variable to store strings
-		boolean swap = true;// boolen to determin if sort is finished
+		boolean swap = true;// boolean to determine if sort is finished
 		while(swap)
 		{
 			swap = false;
